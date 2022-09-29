@@ -1,0 +1,298 @@
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set address %}
+  {% for part, value in params.school.address %}
+    {{value}}{% if not loop.last %}, {% endif %}
+  {% endfor %}
+{% endset %}
+
+{% set emailAddress %}
+  {% if params.school.emailAddress != 'Not entered' %}
+    <a href="{{params.school.emailAddress}}">{{params.school.emailAddress}}</a>
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Enter an email address</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set website %}
+  {% if params.school.website != 'Not entered' %}
+    <a href="{{params.school.website}}">{{params.school.website}} (opens in new tab)</a>
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Enter website</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set phase %}
+  {% if params.school.phase != 'Not entered' %}
+    {{params.school.phase}}
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Enter the education phase</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set about %}
+  {% if params.school.about != 'Not entered' %}
+    {{params.school.about | escape | nl2br}}
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Enter a school description</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set howEmployeesAreSupported %}
+  {% if params.school.supportForStaff != 'Not entered' %}
+    {{params.school.supportForStaff | escape | nl2br}}
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Enter information about what the school offers its staff</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set safeguardingCommitment %}
+  {% if params.school.safeguardingCommitment != 'Not entered' %}
+    {{params.school.safeguardingCommitment | escape | nl2br}}
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Enter information about your commitment to safeguarding</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set logo %}
+  {% if params.school.logo != 'Not entered' %}
+    <img src="{{params.school.logo}}" alt="Logo" width="150">
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Add a school logo</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+{% set photo %}
+  {% if params.school.photo != 'Not entered' %}
+    <img src="{{params.school.photo}}" alt="Photo" width="100%">
+  {% else %}
+    <div class="app-field-highlight">
+      <p class="app-field-highlight__instruction">Add a school photo</p>
+      Not entered
+    </div>
+  {% endif %}
+{% endset %}
+
+
+{% if params.school.schools %}
+  {% set descriptionLabel = "Organisation description" %}
+  {% set howEmployeesAreSupportedLabel = "What the organisation offers its staff" %}
+  {% set logoLabel = "Organisation logo" %}
+  {% set photoLabel = "Organisation photo" %}
+{% else %}
+  {% set descriptionLabel = "School description" %}
+  {% set howEmployeesAreSupportedLabel = "What the school offers its staff" %}
+  {% set logoLabel = "School logo" %}
+  {% set photoLabel = "School photo" %}
+{% endif %}
+
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: params.school.name
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        text: address
+      }
+    },
+    {
+      key: {
+        text: "Type"
+      },
+      value: {
+        text: params.school.type
+      }
+    } if params.school.type,
+    {
+      key: {
+        text: "Education phase"
+      },
+      value: {
+        html: phase
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/phase",
+            text: "Change",
+            visuallyHiddenText: "Phase"
+          }
+        ]
+      }
+    } if params.school.phase,
+    {
+      key: {
+        text: "Age group"
+      },
+      value: {
+        text: params.school.ageGroup
+      }
+    } if params.school.ageGroup,
+    {
+      key: {
+        text: "Size"
+      },
+      value: {
+        text: params.school.size + ' pupils enrolled'
+      }
+    } if params.school.size,
+    {
+      key: {
+        text: "Ofsted report"
+      },
+      value: {
+        html: '<a href="#">View Ofsted report (opens in new tab)</a>'
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        html: emailAddress
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/email-address",
+            text: "Change",
+            visuallyHiddenText: "Email address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Website"
+      },
+      value: {
+        html: website
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/website",
+            text: "Change",
+            visuallyHiddenText: "Website"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: descriptionLabel
+      },
+      value: {
+        html: about
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/description",
+            text: "Change",
+            visuallyHiddenText: "About school"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: howEmployeesAreSupportedLabel
+      },
+      value: {
+        html: howEmployeesAreSupported
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/description",
+            text: "Change",
+            visuallyHiddenText: "About how employees are supported"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Commitment to safeguarding"
+      },
+      value: {
+        html: safeguardingCommitment
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/safeguarding-commitment",
+            text: "Change",
+            visuallyHiddenText: "Information about your commitment to safeguarding"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: logoLabel
+      },
+      value: {
+        html: logo
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/"+params.school.id+"/logo/edit",
+            text: "Change",
+            visuallyHiddenText: "About school"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: photoLabel
+      },
+      value: {
+        html: photo
+      },
+      actions: {
+        items: [
+          {
+            href: "/organisation/edit/photo",
+            text: "Change",
+            visuallyHiddenText: "About school"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
