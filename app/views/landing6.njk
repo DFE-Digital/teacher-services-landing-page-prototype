@@ -1,0 +1,112 @@
+
+{% extends "layout.njk" %}
+
+{% set pageId = 'start' %}
+
+{% set serviceName = '' %}
+
+{% block header %}
+  {% include "includes/header.njk" %}
+
+  <header class="homepage-inverse-header">
+    <div class="govuk-width-container">
+      <h1 class="homepage-inverse-header__title">
+        Welcome to&nbsp;Teacher Services
+      </h1>
+      <p class="homepage-inverse-header__intro">The best place to find teaching services and&nbsp;information</p>
+      <p class="homepage-inverse-header__intro homepage-inverse-header__intro--bold">Simpler, clearer, faster</p>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-l">
+    {{serviceName}}
+  </h1>
+  <ul class="homepage-services-and-info__list">
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="https://apply-for-qts-in-england.education.gov.uk/" class="govuk-link chevron-card__link">
+            Apply for qualified teaching status (QTS) in England
+          </a>
+        </h2>
+        <p class="govuk-body chevron-card__description">Qualified teachers outside of England can get QTS by having their qualifications assessed.</p>
+      </div>
+    </li>
+
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="https://find-a-lost-trn.education.gov.uk/" class="govuk-link chevron-card__link">
+            Find a lost teacher reference number (TRN)
+          </a>
+        </h2>
+
+        <p class="govuk-body chevron-card__description">Find your teacher reference number (TRN) if you do not know it or have forgotten it.</p>
+      </div>
+    </li>
+
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="https://teaching-vacancies.service.gov.uk/" class="govuk-link chevron-card__link">
+            Find teacher and school jobs near you
+          </a>
+        </h2>
+
+        <p class="govuk-body chevron-card__description">Search for teaching, school leadership and education support jobs in England.</p>
+      </div>
+    </li>
+
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link chevron-card__link">
+            Name of thing (preferrably a verb)
+          </a>
+        </h2>
+
+        <p class="govuk-body chevron-card__description">SDonec feugiat interdum diam, et suscipit orci euismod eget. Ut fringilla sem ut eros consequat fringilla.</p>
+      </div>
+    </li>
+
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link chevron-card__link">
+            Name of thing (preferrably a verb)
+          </a>
+        </h2>
+
+        <p class="govuk-body chevron-card__description">SDonec feugiat interdum diam, et suscipit orci euismod eget. Ut fringilla sem ut eros consequat fringilla.</p>
+      </div>
+    </li>
+
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link chevron-card__link">
+            Name of thing (preferrably a verb)
+          </a>
+        </h2>
+
+        <p class="govuk-body chevron-card__description">SDonec feugiat interdum diam, et suscipit orci euismod eget. Ut fringilla sem ut eros consequat fringilla.</p>
+      </div>
+    </li>
+
+    <li class="chevron-card">
+      <div class="chevron-card__wrapper">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link chevron-card__link">
+            Name of thing (preferrably a verb)
+          </a>
+        </h2>
+
+        <p class="govuk-body chevron-card__description">SDonec feugiat interdum diam, et suscipit orci euismod eget. Ut fringilla sem ut eros consequat fringilla.</p>
+      </div>
+    </li>
+
+  </ul>
+
+{% endblock %}

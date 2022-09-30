@@ -25,6 +25,8 @@ $app-images-path: "/public/images/";
 // utilities
 @import "utilities/hidden";
 
+@import "mixins/grid_helper";
+
 .govuk-header {
   border-bottom: 10px solid #1d70b8;
 }
@@ -208,5 +210,125 @@ h1 .govuk-tag {
 
   :last-child {
     margin-bottom: 0;
+  }
+}
+
+.homepage-inverse-header {
+  background-color: $govuk-brand-colour;
+  padding-bottom: govuk-spacing(7);
+  padding-top: govuk-spacing(8);
+  @include govuk-typography-common;
+
+  @include govuk-media-query($from: desktop) {
+    padding-bottom: govuk-spacing(8);
+    padding-top: govuk-spacing(9);
+  }
+}
+
+.homepage-inverse-header__title {
+  @include govuk-typography-weight-bold;
+  color: govuk-colour("white");
+  font-size: 32px;
+  font-size: govuk-px-to-rem(32);
+  line-height: 1.2;
+  margin: 0;
+  padding-bottom: govuk-spacing(6);
+
+  @include govuk-media-query($from: desktop) {
+    font-size: 48px;
+    font-size: govuk-px-to-rem(48);
+  }
+}
+
+.homepage-inverse-header__intro {
+  color: govuk-colour("white");
+  font-size: 19px;
+  font-size: govuk-px-to-rem(19);
+  margin: 0;
+  padding-bottom: govuk-spacing(2);
+
+  @include govuk-media-query($from: desktop) {
+    font-size: 24px;
+    font-size: govuk-px-to-rem(24);
+  }
+}
+
+.homepage-services-and-info__list {
+  @include columns($items: 16, $columns: 1, $selector: "li");
+  list-style: none;
+  margin: 0 govuk-spacing(-3);
+  padding: 0;
+
+  @include govuk-media-query($from: "tablet") {
+    @include columns($items: 16, $columns: 2, $selector: "li");
+  }
+
+  @include govuk-media-query($from: "desktop") {
+    @include columns($items: 16, $columns: 3, $selector: "li");
+  }
+
+  .homepage-section__government-activity & {
+    @include columns($items: 6, $columns: 1, $selector: "li");
+    margin-bottom: govuk-spacing(4);
+
+    @include govuk-media-query($from: "tablet") {
+      @include columns($items: 6, $columns: 2, $selector: "li");
+      margin-bottom: 0;
+    }
+  }
+}
+
+.chevron-card {
+  border-top: 1px solid $govuk-border-colour;
+  margin: 0 govuk-spacing(3);
+  padding: govuk-spacing(1) 0 govuk-spacing(4) 0;
+}
+
+.chevron-card__wrapper {
+  padding: govuk-spacing(2) govuk-spacing(6) govuk-spacing(2) 0;
+  position: relative;
+}
+
+.chevron-card__description {
+  margin: 0 govuk-spacing(-6) 0 0;
+}
+
+.chevron-card__link {
+  &:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:before {
+    $dimension: 7px;
+    $width: 3px;
+
+    border-right: $width solid $govuk-brand-colour;
+    border-top: $width solid $govuk-brand-colour;
+    content: "";
+    display: block;
+    height: $dimension;
+    position: absolute;
+    right: govuk-spacing(1);
+    top: govuk-spacing(3);
+    transform: translateY(0) rotate(45deg) scale(1);
+    width: $dimension;
+  }
+
+  &:hover {
+    &:before {
+      border-color: $govuk-link-hover-colour;
+    }
+  }
+
+  &:focus {
+    &:before {
+      border-color: $govuk-focus-text-colour;
+    }
   }
 }
