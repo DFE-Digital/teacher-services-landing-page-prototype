@@ -11,166 +11,22 @@
   <h1 class="govuk-heading-l">
     {{serviceName}}
   </h1>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-
-      <div class="app-card">
-
-        <h2 class="govuk-heading-m">
-          Find a job in teaching
-        </h2>
-
-        <p>Find a job in teaching in England.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-      <div class="app-card">
-        <h2 class="govuk-heading-m">
-          Apply for qualified teaching status (QTS)
-        </h2>
-
-        <p>Some blurb.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-      <div class="app-card">
-        <h2 class="govuk-heading-m">
-          Name of thing (preferrably a verb)
-        </h2>
-
-        <p>Some blurb.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-      <div class="app-card">
-        <h2 class="govuk-heading-m">
-          Name of thing (preferrably a verb)
-        </h2>
-
-        <p>Some blurb.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-
-
-      {# <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-        <li>
-          <a href="#">Find a job in teaching</a>
-        </li>
-        <li>
-          <a href="#">Apply for qualified teaching status (QTS)</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-      </ul> #}
-
-
-    </div>
-    <div class="govuk-grid-column-one-half">
-
-      <div class="app-card">
-
-        <h2 class="govuk-heading-m">
-          Find a job in teaching
-        </h2>
-
-        <p>Find a job in teaching in England.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-      <div class="app-card">
-        <h2 class="govuk-heading-m">
-          Apply for qualified teaching status (QTS)
-        </h2>
-
-        <p>Some blurb.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-      <div class="app-card">
-        <h2 class="govuk-heading-m">
-          Name of thing (preferrably a verb)
-        </h2>
-
-        <p>Some blurb.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-      <div class="app-card">
-        <h2 class="govuk-heading-m">
-          Name of thing (preferrably a verb)
-        </h2>
-
-        <p>Some blurb.</p>
-
-        {# <p><a href="#">Start now</a></p> #}
-        {{ govukButton({
-          text: "Start now",
-          isStartButton: true
-        }) }}
-      </div>
-
-      {# <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-        <li>
-          <a href="#">Find a job in teaching</a>
-        </li>
-        <li>
-          <a href="#">Apply for qualified teaching status (QTS)</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-        <li>
-          <a href="#">Etc</a>
-        </li>
-      </ul> #}
-
-
-    </div>
-  </div>
+  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    <li>
+      <a href="/landing1">A simple bullet list</a> (assumes no need for extra descriptions and avoids repeat wording)
+    </li>
+    <li>
+      <a href="/landing2">Single column, with descriptions and buttons</a>
+    </li>
+    <li>
+      <a href="/landing3">Two columns, with descriptions and buttons</a>
+    </li>
+    <li>
+      <a href="/landing4">Two columns, using panels</a>
+    </li>
+    <li>
+      <a href="/landing5">Three columns, using panels, links instead of buttons</a>
+    </li>
+  </ul>
 
 {% endblock %}

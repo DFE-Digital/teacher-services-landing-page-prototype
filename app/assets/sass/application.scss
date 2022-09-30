@@ -199,10 +199,12 @@ h1 .govuk-tag {
 }
 
 .app-card {
-  // background:  govuk-colour("light-grey");
   margin-bottom: govuk-spacing(5);
-  padding: govuk-spacing(4) govuk-spacing(5);
+
   padding: govuk-spacing(6) govuk-spacing(0);
+  background:  govuk-colour("light-grey");
+  padding: govuk-spacing(4) govuk-spacing(5);
+
 
   :last-child {
     margin-bottom: 0;

@@ -1,0 +1,36 @@
+
+{% extends "layout.njk" %}
+
+{% set pageId = 'start' %}
+
+{% block header %}
+  {% include "includes/header.njk" %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-l">
+    {{serviceName}}
+  </h1>
+
+  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    <li>
+      <a href="#">Find a job in teaching</a>
+    </li>
+    <li>
+      <a href="#">Apply for qualified teaching status (QTS)</a>
+    </li>
+    <li>
+      <a href="#">Etc</a>
+    </li>
+    <li>
+      <a href="#">Etc</a>
+    </li>
+    <li>
+      <a href="#">Etc</a>
+    </li>
+    <li>
+      <a href="#">Etc</a>
+    </li>
+  </ul>
+
+{% endblock %}
